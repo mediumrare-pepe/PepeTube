@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn service for PepeTube
+After=network.target
+
+[Service]
+User=pepetube
+Group=pepetube
+WorkingDirectory=/opt/pepetube
+Environment="PATH=/opt/pepetube/venv/bin"
+ExecStart=/opt/pepetube/venv/bin/gunicorn --workers 3 --bind unix:/run/pepetube/pepetube.sock wsgi:app
+RuntimeDirectory=pepetube
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

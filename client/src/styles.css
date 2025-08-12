@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #222;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.player-container {
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.player-container video {
+  width: 100%;
+  height: auto;
+}
+
+.upload-form,
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 1rem;
+}
+
+.comments {
+  list-style: none;
+  padding: 0 1rem;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+  }
+}
